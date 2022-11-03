@@ -13,11 +13,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func createFeedViewController() -> UINavigationController {
         let navigationVC = UINavigationController(rootViewController: FeedViewController())
+        navigationVC.tabBarItem = UITabBarItem(title: "Лента", image: UIImage (systemName: "newspaper"), tag: 0)
         return navigationVC
     }
     
     func createProfileViewController() -> UINavigationController {
-        return UINavigationController(rootViewController: ProfileViewController())
+        let navigationVC = UINavigationController(rootViewController: ProfileViewController())
+        navigationVC.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage (systemName: "person.circle"), tag: 1)
+        return navigationVC
     }
     
     func createTabBar() -> UITabBarController {
