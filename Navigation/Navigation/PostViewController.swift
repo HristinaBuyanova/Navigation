@@ -14,10 +14,20 @@ class PostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
-        self.navigationItem.title = titlePost
+        self.title = titlePost
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let barButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(barButtonAction))
+        
+        navigationItem.rightBarButtonItem = barButton
+        
+        
     }
     
-
+    @objc func barButtonAction() -> UIViewController {
+        let infoVC = InfoViewController()
+        self.navigationController?.pushViewController(infoVC, animated: true)
+            return infoVC
+    }
     
 }
