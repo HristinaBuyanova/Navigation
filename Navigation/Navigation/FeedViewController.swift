@@ -9,16 +9,24 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
+    var post = Post(title: "Мой пост")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
+        
         let uiButton = UIButton()
+        uiButton.backgroundColor = .blue
+        uiButton.layer.cornerRadius = 12
+        
         self.view.addSubview(uiButton)
         
-        uiButton.setTitle("Перейти в ленту", for: .normal)
+        uiButton.setTitle("Перейти на пост", for: .normal)
+        uiButton.setTitleColor(.lightGray, for: .normal)
         uiButton.translatesAutoresizingMaskIntoConstraints = false
-        uiButton.addAction(UIAction(handler: {_ in
+        uiButton.addAction(UIAction(handler: { [self]_ in
             let vc = PostViewController()
+            vc.titlePost = post.title
             self.navigationController?.pushViewController(vc, animated: true)
         }), for: .touchUpInside)
        
