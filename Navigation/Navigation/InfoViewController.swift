@@ -34,6 +34,14 @@ class InfoViewController: UIViewController {
 extension InfoViewController {
     func showAlert() {
         let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { _ in
+            print("ok action")
+        }
+        let cancelAction = UIAlertAction(title: "cancel", style: .destructive) { _ in
+            print("cancel action")
+        }
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
         
         present(alertController, animated: true)
     }
