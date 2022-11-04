@@ -9,22 +9,36 @@ import UIKit
 
 class InfoViewController: UIViewController {
 
+    var alertButton = UIButton()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .yellow
-
-        // Do any additional setup after loading the view.
+        
+        view.addSubview(alertButton)
+        alertButton.frame = CGRect(x: -250, y: 0, width: 150, height: 50)
+        alertButton.center = view.center
+        alertButton.layer.cornerRadius = 15
+        alertButton.backgroundColor = .black
+        alertButton.setTitle("Alert", for: .normal)
+        alertButton.addTarget(self, action: #selector(alert), for: .touchUpInside)
+        
+        }
+    
+    @objc func alert() {
+        showAlert()
     }
+       
+}
+    
+extension InfoViewController {
+    func showAlert() {
+        let alertController = UIAlertController(title: "Title", message: "Message", preferredStyle: .alert)
+        
+        present(alertController, animated: true)
+    }
+}
+
     
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
