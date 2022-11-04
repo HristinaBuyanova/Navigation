@@ -26,7 +26,7 @@ class PostViewController: UIViewController {
     
     @objc func barButtonAction() -> UIViewController {
         let infoVC = InfoViewController()
-        self.navigationController?.pushViewController(infoVC, animated: true)
+        self.present(infoVC, animated: true)
             return infoVC
     }
     
