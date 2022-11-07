@@ -12,7 +12,13 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .lightGray
-
+        title = "Profile"
+        
+        let profileHeaderView = ProfileHeaderView()
+        view.addSubview(profileHeaderView)
+        profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
+        
+        
         // Do any additional setup after loading the view.
     }
     
