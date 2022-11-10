@@ -84,10 +84,10 @@ class ProfileHeaderView: UIView {
             profileHW.widthAnchor.constraint(equalTo: self.widthAnchor),
             profileHW.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             
-            labelName.leadingAnchor.constraint(equalTo: profileHW.leadingAnchor, constant: 160),
+            labelName.leadingAnchor.constraint(equalTo: profileHW.leadingAnchor, constant: 132),
             labelName.topAnchor.constraint(equalTo: profileHW.topAnchor, constant: 27),
             
-            labelStatus.leadingAnchor.constraint(equalTo: profileHW.leadingAnchor, constant: 160),
+            labelStatus.leadingAnchor.constraint(equalTo: profileHW.leadingAnchor, constant: 132),
             labelStatus.bottomAnchor.constraint(equalTo: buttonShowStatus.topAnchor, constant: -34),
             
             buttonShowStatus.centerXAnchor.constraint(equalTo: profileHW.centerXAnchor),
