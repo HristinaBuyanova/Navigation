@@ -10,10 +10,10 @@ import UIKit
 class ProfileHeaderView: UIView {
     
     let profileHW: UIView = {
-         let view = UIView()
-         view.backgroundColor = .lightGray
-         return view
-     }()
+        let view = UIView()
+        view.backgroundColor = .lightGray
+        return view
+    }()
     
     let avatar: UIImageView = {
         let imageView = UIImageView()
@@ -25,7 +25,7 @@ class ProfileHeaderView: UIView {
         imageView.clipsToBounds = true
         return imageView
     }()
-        
+    
     let labelName: UILabel = {
         let name = UILabel()
         name.text = "Hipster cat"
@@ -41,7 +41,7 @@ class ProfileHeaderView: UIView {
         status.font = .systemFont(ofSize: 14, weight: .regular)
         return status
     }()
-        
+    
     let buttonShowStatus: UIButton = {
         let button = UIButton()
         button.backgroundColor = .blue
@@ -55,8 +55,8 @@ class ProfileHeaderView: UIView {
         button.addTarget(Any?.self, action: #selector(buttonPressed), for: .touchUpInside)
         return button
     }()
-        
-        
+    
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(profileHW)
@@ -65,7 +65,7 @@ class ProfileHeaderView: UIView {
         profileHW.addSubview(labelStatus)
         profileHW.addSubview(buttonShowStatus)
         setupView()
-        }
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -100,7 +100,6 @@ class ProfileHeaderView: UIView {
     @objc func buttonPressed() {
         print(labelStatus.text!)
     }
-    
 }
     
     
