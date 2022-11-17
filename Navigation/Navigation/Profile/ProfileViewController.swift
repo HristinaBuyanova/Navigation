@@ -35,26 +35,28 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        profileHeaderView.backgroundColor = .systemGray
         title = "Profile"
+        setupView()
+    }
+    
+    func setupView() {
+        profileHeaderView.backgroundColor = .systemGray
         view.addSubview(profileHeaderView)
         profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(buttonTitleChange)
         let safeArea = view.safeAreaLayoutGuide
 
         NSLayoutConstraint.activate([
-            profileHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            profileHeaderView.topAnchor.constraint(equalTo: safeArea.topAnchor),
-            profileHeaderView.heightAnchor.constraint(equalTo: view.heightAnchor, constant: 220),
+            profileHeaderView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
+            profileHeaderView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
+            profileHeaderView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 0),
+            profileHeaderView.heightAnchor.constraint(equalToConstant: 220),
             
             buttonTitleChange.heightAnchor.constraint(equalToConstant: 50),
-            buttonTitleChange.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            buttonTitleChange.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            buttonTitleChange.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0),
+            buttonTitleChange.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0),
             buttonTitleChange.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
         ])
-        
-        
     }
     
     override func viewWillLayoutSubviews() {
